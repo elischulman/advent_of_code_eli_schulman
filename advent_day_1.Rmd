@@ -1,0 +1,53 @@
+---
+title: "Advent of Code"
+author: "Eli Schulman"
+date: "12/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+## Day 1
+
+### Problem 1
+```{r}
+sonar <- read_csv(here("data", "day1.csv")) %>% 
+  clean_names() %>% 
+  pull(scans)
+
+count = 0
+
+for(i in seq(2:(length(sonar) + 1))){
+  ifelse(sonar[i] > (sonar[i - 1]), (count = count + 1), (count = count + 0))
+}
+
+print(count)
+```
+
+### Problem 2
+```{r}
+
+```
+
+## Day 2
+
+### Problem 1
+```{r}
+direct <- read_csv(here("data", "day2.csv")) %>% 
+  clean_names() %>%
+  pull(movements)
+
+view(direct)
+```
+
+
+
+
+
+
